@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Statement of Authorship";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #1e293b;
+            --success-color: #10b981;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .authorship-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .authorship-header {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+            .authorship-header h1 {
+                color: var(--primary-color);
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+                .authorship-header h1 i {
+                    font-size: 1.8rem;
+                }
+
+        .authorship-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-color);
+        }
+
+        .signature-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .signature-line {
+            width: 300px;
+            border-top: 1px solid var(--dark-color);
+            margin: 1rem 0;
+        }
+
+        .decoration {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .decoration-1 {
+            top: -50px;
+            right: -50px;
+        }
+
+        .decoration-2 {
+            bottom: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .student-id {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="authorship-container">
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+
+        <div class="authorship-header">
+            <h1>
+                <i class="fas fa-certificate"></i>
+                @ViewData["Title"]
+            </h1>
+        </div>
+
+        <div class="authorship-content">
+            <p>
+                I, <strong>Ali Abubaker</strong><span class="student-id">000857347</span>,
+                certify that this material is my original work.
+                No other person's work has been used without due acknowledgement and I have not made my work available to anyone else.
+            </p>
+
+            
+        </div>
+
+        <div class="signature-section">
+            
+            <div>
+                <strong>Ali Abubaker</strong>
+                <div class="text-muted">Date: @DateTime.Now.ToString("MMMM d, yyyy")</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

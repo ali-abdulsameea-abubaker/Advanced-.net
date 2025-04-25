@@ -1,0 +1,45 @@
+﻿@page
+@model assignment4.Pages.Orders.IndexModel
+@{
+    ViewData["Title"] = "High Value Orders";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="get">
+    <div style="margin-bottom: 20px;">
+        <label>Sales Rep:</label>
+        <select asp-for="SelectedEmployeeId" asp-items="Model.EmployeeList" onchange="this.form.submit()" style="padding: 5px;">
+            <option value="">All Sale Reps</option>
+        </select>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ordered</th>
+            <th>Shipped</th>
+            <th>Shipper</th>
+            <th>Freight</th>
+            <th>Ship Name</th>
+            <th>Region</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Order)
+        {
+            <tr>
+                <td>@item.OrderDate?.ToShortDateString()</td>
+                <td>@item.ShippedDate?.ToShortDateString()</td>
+                <td>@item.ShipViaNavigation?.CompanyName</td>
+                <td>@item.Freight?.ToString("N2")</td>
+
+                <td>@item.ShipName</td>
+                <td>@item.ShipRegion</td>
+                <td>@item.ShipCountry</td>
+            </tr>
+        }
+    </tbody>
+</table>

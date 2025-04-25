@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Northwind Traders";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Title</h1>
+    <img src="Images/northwind.png" />
+    <p>Proudly distributing fine food products around the world for @Model.CalculateYera years</p>
+</div>

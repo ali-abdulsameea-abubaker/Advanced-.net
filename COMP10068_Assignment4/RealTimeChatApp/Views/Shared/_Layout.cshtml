@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RealTimeChatApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RealTimeChatApp.styles.css" asp-append-version="true" />
+    <style>
+        /* Custom navbar styling */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --navbar-bg: #ffffff;
+            --navbar-text: #2b2d42;
+            --navbar-hover: #f8f9fa;
+            --navbar-active: #e9ecef;
+            --navbar-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            background-color: var(--navbar-bg) !important;
+            box-shadow: var(--navbar-shadow);
+            padding: 0.8rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar-brand i {
+                margin-right: 0.5rem;
+                font-size: 1.8rem;
+            }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .nav-item {
+            margin: 0 0.5rem;
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--navbar-text) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-link i {
+                margin-right: 0.5rem;
+                font-size: 1.1rem;
+            }
+
+            .nav-link:hover {
+                background-color: var(--navbar-hover);
+                transform: translateY(-2px);
+            }
+
+            .nav-link.active {
+                background-color: var(--primary-color) !important;
+                color: white !important;
+                box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+            }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+
+        .navbar-toggler-icon {
+            background-image: none;
+            position: relative;
+            width: 24px;
+            height: 2px;
+            background-color: var(--primary-color);
+            display: block;
+        }
+
+            .navbar-toggler-icon::before,
+            .navbar-toggler-icon::after {
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 2px;
+                background-color: var(--primary-color);
+                left: 0;
+                transition: all 0.3s ease;
+            }
+
+            .navbar-toggler-icon::before {
+                transform: translateY(-6px);
+            }
+
+            .navbar-toggler-icon::after {
+                transform: translateY(6px);
+            }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            background-color: transparent;
+        }
+
+            .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+                transform: rotate(45deg);
+            }
+
+            .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+                transform: rotate(-45deg);
+            }
+
+        /* Responsive adjustments */
+        @@media (max-width: 991.98px) {
+            .navbar-collapse {
+                padding: 1rem;
+                background-color: var(--navbar-bg);
+                border-radius: 0.5rem;
+                box-shadow: var(--navbar-shadow);
+                margin-top: 1rem;
+            }
+
+            .nav-item {
+                margin: 0.25rem 0;
+            }
+
+            .nav-link {
+                padding: 0.75rem 1rem !important;
+            }
+        }
+
+        /* Animation for active link indicator */
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 50%;
+        }
+
+        .nav-item.active::after {
+            width: 80%;
+        }
+    </style>
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-comments"></i>RealTimeChat
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <i class="fas fa-comment-dots"></i>SOA
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Add active class to current nav item
+        $(document).ready(function() {
+            var current = location.pathname;
+            $('.nav-link').each(function() {
+                var $this = $(this);
+                if ($this.attr('href') === current) {
+                    $this.addClass('active');
+                    $this.parent().addClass('active');
+                }
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

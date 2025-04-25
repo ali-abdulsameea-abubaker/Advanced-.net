@@ -1,0 +1,40 @@
+﻿@page
+@model RazorIntro.Pages.Forms.AddCourseModel
+@{
+    ViewBag.Title = "Add course";
+}
+
+
+<h1>@ViewBag.Title</h1>
+
+<div class="col-md-4">
+    <form method="post">
+        <div>
+            <label asp-for="course.CourseCode"></label>
+            <input asp-for="course.CourseCode" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="course.CourseName"></label>
+            <input asp-for="course.CourseName" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="course.Hours"></label>
+            <input asp-for="course.Hours" class="form-control" />
+        </div>
+
+        <br/>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+    
+</div>
+
+@* <div> *@
+@*     <ul> *@
+@*         <li @Model.course.CourseName></li> *@
+@*         <li @Model.course.CourseCode></li> *@
+@*         <li @Model.course.Hours></li> *@
+@*     </ul> *@
+@* </div> *@

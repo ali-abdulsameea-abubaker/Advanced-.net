@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeChatApp", "RealTimeChatApp\RealTimeChatApp.csproj", "{DD9E8144-F7CB-47F9-B55C-7589B031E022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeChatApp.Tests", "RealTimeChatApp.Tests\RealTimeChatApp.Tests.csproj", "{CD84BD01-F022-4F1B-9FA8-C1D6F193EC8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD9E8144-F7CB-47F9-B55C-7589B031E022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9E8144-F7CB-47F9-B55C-7589B031E022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9E8144-F7CB-47F9-B55C-7589B031E022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9E8144-F7CB-47F9-B55C-7589B031E022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD84BD01-F022-4F1B-9FA8-C1D6F193EC8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD84BD01-F022-4F1B-9FA8-C1D6F193EC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD84BD01-F022-4F1B-9FA8-C1D6F193EC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD84BD01-F022-4F1B-9FA8-C1D6F193EC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE85DB27-24F9-4442-9F20-B5E04BC9198D}
+	EndGlobalSection
+EndGlobal
